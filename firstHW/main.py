@@ -61,6 +61,7 @@ class NameData(Func):
         for i in range(len(self.max_data)):
             print(self.names[i],f' ({self.max_data[i][0]}nm, {self.max_data[i][1]})')
 
+print(os.listdir())
 path = 'csv/'
 Name = NameData(path)
 graph = Graph(Name.data, path)
@@ -70,8 +71,6 @@ graph.MakeLegend(Name.Names())
 graph.MakeLabel('Длина волны нм', 'Относительная интенсивность', 'abs spectra')
 
 Name.PrintMax()
-
-plt.show()
 dat_dipol = np.array([2.88, 1.04, 1.69, 1.85, 0.36])
 dat_diel = np.array([21, 4.8, 24.55, 80, 2.4])
 graph.MakePlot2(np.array([Name.max_data.T[0], dat_dipol]).T, 1, 0)
@@ -79,7 +78,7 @@ graph.MakeApprox(0.25, 3, 0.1, [dat_dipol.T, Name.max_data.T[0]], 2)
 n = Name.Names()
 n.append('аппроксимация')
 graph.MakeLegend(n)
-graph.MakeLabel('Положение максимума, нм', 'Диполь', 'dipol and maximums')
+graph.MakeLabel('Положение максимума, нм', 'Дипольный момент', 'dipol moment and maximums')
 plt.show()
 
 graph.MakePlot2(np.array([Name.max_data.T[0], dat_diel]).T, 1, 0)
