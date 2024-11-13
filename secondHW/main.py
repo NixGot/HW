@@ -15,6 +15,17 @@ def MakeApprox(x0, x1, step, data, dg):
     plt.plot(np.arange(x0, x1, step), [Apr(dg, i, a) for i in np.arange(x0, x1, step)], color='pink')
 
 
+print('''
+----------------------------------
+Задание выполнено для папки CCD4
+Группа:
+Молодцов Максим
+Марасан Маргарита
+Фёдоров Евгений
+----------------------------------
+''')
+
+
 path = Path('CCD4')
 names = [i[4:-4] for i in os.listdir(path)]
 averSKO = []
