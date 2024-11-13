@@ -37,9 +37,6 @@ for i in os.listdir(path):
 
 averSKO = np.array(averSKO)
 for i, n in enumerate(names):
-    # print(n, ':')
-    # print(f'    среднее = {averSKO[i][0]}')
-    # print(f'    СКО = {averSKO[i][1]}')
     print(f'''
 {n}:
     среднее = {averSKO[i][0]}
